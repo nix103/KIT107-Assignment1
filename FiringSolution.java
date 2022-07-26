@@ -6,10 +6,8 @@
  */
 
 import java.text.DecimalFormat;
-// import java.util.Scanner; <- might need?
 
-public class FiringSolution 
-//implements FiringSolutionInterface
+public class FiringSolution implements FiringSolutionInterface
 {
     private static final DecimalFormat FMT=new DecimalFormat("###0.000");
     
@@ -18,44 +16,35 @@ public class FiringSolution
     private double x;
     private double y;
     
-    // COMPLETE ME! 
-
-    //add getters and setters:
-
-    public Time getTime() {
-        return time;
-    }
-    
-    /** Sets the hours to be a value inputted by user */
-    public void setTime(Time value) { 
-        time = value;
+    public Time getTIme() { 
+        return time; 
+    }   
+    //prompts the user to enter the value of time in hours
+    public void timeInput(Time input) { 
+        time = input;
     }
 
-    /** Get/set degree */
-    public int getDegree(){
-        return degree;
-    }    
-
-    public void setDegree(int value){
-        degree = value;
+    public int getDegree() { 
+        return degree; 
+    }
+    //prompts the user to enter the value of degree
+    public void degreeInput(int input) { 
+        degree = input; 
     }
 
-    /** get/set X */
-    public double getX(){
+    public double getX() { 
         return x;
     }
-
-    public void setX(double value){
-        x = value;
+    //prompts the user to enter the value of x's point
+    public void xInput(double input) { 
+        x = input;
     }
 
-    /** get/set y */
-    public double getY(){
+    public double getY() { 
         return y;
     }
-   
-    public void setY(double value){
-        y = value;
-    } 
-
+    //prompts the user to enter the value of y's point
+    public void yInput(double input) { 
+        y = input; 
+    }
  }
