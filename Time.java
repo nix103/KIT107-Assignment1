@@ -104,5 +104,7 @@ public class Time implements TimeInterface
         return ((this.hour == that.hour) && (this.minute == that.minute) && (this.second == that.second));
     }
  
-    COMPLETE ME!
+    public void addSeconds(double s) { 
+
+    }
  }
