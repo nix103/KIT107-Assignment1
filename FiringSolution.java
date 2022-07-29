@@ -15,6 +15,9 @@ public class FiringSolution extends Time implements FiringSolutionInterface
     private int degree;
     private double x;
     private double y;
+
+    private int missilePosition[]; 
+    private int missileCoordinates[];
     
     // gets current time
     public Time getTime() { 
@@ -76,4 +79,20 @@ public class FiringSolution extends Time implements FiringSolutionInterface
         return this.getTime().toString();
     }
 
+    //public boolean isHitPoint() { 
+        // yes - fire laser
+        // no - increment
+        // degrees, increment seconds
+    //}
+
+    /**
+     * notes:
+     * have a separate array for the coordinates, position of the missile, laser's degree
+     */
+
+     /** 
+      * Given an angle t in the range of 0–180° for the direction of the laser, the position of the
+        missile on its elliptical path is the coordinate (x,y) where x=4000*Math.cos(r) and
+        y=20*Math.sin(r). r is the value t converted to radia
+      */
  }
