@@ -7,7 +7,7 @@
 
 import java.text.DecimalFormat;
 
-public class FiringSolution implements FiringSolutionInterface
+public class FiringSolution extends Time implements FiringSolutionInterface
 {
     private static final DecimalFormat FMT = new DecimalFormat("###0.000");
     
