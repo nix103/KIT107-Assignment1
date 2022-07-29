@@ -2,7 +2,7 @@
  * Class for Firing Solution
  * ADT Implmentation for KIT107 Assignment 1
  * @author Julian Dermoudy and Nicole and Nicolyn
- * @version <<DATE>>
+ * @version 29th July 2022
  */
 
 import java.text.DecimalFormat;
