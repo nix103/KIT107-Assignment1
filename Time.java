@@ -106,11 +106,11 @@ public class Time implements TimeInterface
  
     public void addSeconds(double s) { 
         
-        this.second ++;
+        s++;
 
-        if(this.second == 60)
+        if(s == 60)
         {
-            this.second = 0;                    
+            s = 0;                    
         }
     }
  }
