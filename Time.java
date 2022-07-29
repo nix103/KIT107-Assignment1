@@ -21,18 +21,19 @@ public class Time implements TimeInterface
      */
     public Time()
     { 
-        setTime( 0, 0, 0 ); 
+        setTime(0, 0, 0); 
     }
     
     /**
      * Constructor -- to given time
      * @param h new value for hour
      * @param m new value for minute
+     * @param s new value for seconds <- ? or just 0
      * @author Julian Dermoudy
      */
-    public Time(int h, int m)
+    public Time(int h, int m, int s)
     { 
-        setTime( h, m, 0); 
+        setTime(h, m, s); 
     }
     
     /**
@@ -106,9 +107,10 @@ public class Time implements TimeInterface
  
     public void addSeconds(double s) { 
         
-        s++;
-
-        if(s == 60)
+        setTime(hour, minute, (int)s++); // increments seconds
+        
+        // resets seconds to 0 once a minute has passed
+        if(s == 60.0)
         {
             s = 0;                    
         }
