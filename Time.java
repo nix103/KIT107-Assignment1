@@ -1,7 +1,7 @@
 /**
  * Class for Time
  * ADT implementation for KIT107 Assignment 1
- * @author Julian Dermoudy and <<YOUR NAMES AND STUDENT IDs HERE>>
+ * @author Julian Dermoudy, Nicolyn Kwok, Nicole Lawrence
  * @version <<DATE>>
  */
 
@@ -48,6 +48,7 @@ public class Time implements TimeInterface
         hour = h; 
         minute = m; 
         second = s;
+
     }
     
     /**
@@ -108,11 +109,17 @@ public class Time implements TimeInterface
     public void addSeconds(double s) { 
         
         setTime(hour, minute, (int)s++); // increments seconds
-        
+
         // resets seconds to 0 once a minute has passed
         if(s == 60.0)
         {
             s = 0;                    
         }
     }
+
+    //----------------
+
+    // need an initial launch time (startLaunch) which is 12:30:00
+    // need 
+
  }
