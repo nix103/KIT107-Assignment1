@@ -46,27 +46,23 @@ public class FiringSolution extends Time implements FiringSolutionInterface
     //prompts the user to enter the value of y's point
     public void yInput(double input) { 
         y = input; 
-    }
+    }    
     
-    @Override
     public void setTime(Time t) {
         time = t;
         
-    }
+    }    
     
-    @Override
     public void setDegree(int d) {
         degree = d;
         
     }
     
-    @Override
     public void setX(double x) {
         this.x = x;
         
     }
     
-    @Override
     public void setY(double y) {
        this.y = y;
         
