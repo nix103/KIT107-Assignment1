@@ -1,7 +1,7 @@
 /**
  * Class for Firing Solution
  * ADT Implmentation for KIT107 Assignment 1
- * @author Julian Dermoudy and <<YOUR NAMES AND STUDENT IDs HERE>>
+ * @author Julian Dermoudy and Nicole and Nicolyn
  * @version <<DATE>>
  */
 
