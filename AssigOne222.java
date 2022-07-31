@@ -8,29 +8,47 @@
 
 import java.util.Scanner;
 
-public class AssigOne222
+public class AssigOne222 implements TimeInterface, FiringSolutionInterface
 {
     public static void main(String []args)
     {
-        // COMPLETE ME!
+        // double degree = 0;
+        Time launchTime = new Time(12, 30, 0); //launch time
+        double chargeTime = 15.737;         // time for laser to charge
+        int laserStartDegree = 90;          // start position for laser
+        int missileStartDegree = 0;         // start position for missile
+        double missileTime;  // time for missile to move one degree
+        double laserTime;     // time for laser to move one degree
+        int missileDeg;
+        int laserDeg;
+        
 
-//         
-// set up the launch time
-// iterating through each position (degree) of the missile from Launchtown to Doomsville 
+        for(int i = 0; i <= 180; i++)
+        {
+            // At i how long would it take the laser to get to i
+            // how long would it take for the missile to get to i
+            // Is the laser there before the missile
+            // If yes shoot missile at time missile arrives
+            // try next degree
 
-// and for each position/degree repeat the following steps until a solution is found or it is 
-// determined there are no solutions
-// • calculating how the laser would need to move to get there
-// • calculating how the missile would need to move to get there
-// • determining how many seconds the movement of each item 
-// would take and, if the laser can get there no later than the 
-// missile
-// o determine the (x,y) coordinate of impact and the time
-// o create a firing solution of these values
-// o display the time and firing solution (you can make use 
-// of the defined DecimalFormat objects to format the 
-// output of Time and FiringSolution objects)
-// • otherwise 
-// o moving the missile to the next location (degree)
+            // missile to i
+            missileTime = i*7.405;  // time for missile to move one degree
+            laserTime = i*3.61;     // time for laser to move one degree
+
+            if(i >= 90 && i <= 189){
+                missileDeg = 90 + i;
+            } 
+            else if(i < 90 && i >0)
+            {
+                missileDeg = 90 - i;
+            }
+            
+
+            // if(missileTime)            
+        
+            
+
+
+        }
     }
 }
