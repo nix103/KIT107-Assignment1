@@ -81,20 +81,23 @@ public class FiringSolution extends Time implements FiringSolutionInterface {
     // degrees, increment seconds
     // }
 
+    // do we need to prompt the user to enter an angle (t) ? 
+    // also not sure why variable x and y is not used, but used in the if statement?
     public void missileCoordinateConvert() {
-        double x; // the missile's x coordinate
-        double y; // the missile's y coordinate
+        double x; // the missile's x coordinate in radians
+        double y; // the missile's y coordinate in radians
         double r; // t's conversion in radians
         int t; // the angle's variable
 
         t = 0; // initialise t at 0
+        //t = in.nextInt(); is it needed? 
         if (t >= 0 && t <= 180) {
             r = Math.toRadians(t);
 
             x = 4000 * Math.cos(r);
             y = 20 * Math.sin(r);
         }
-
+        //System.out.println("(" + x +", " + y +")"); should this comment be added to the method? 
     }
 
     /**
