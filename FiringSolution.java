@@ -8,7 +8,8 @@
 
 import java.text.DecimalFormat;
 
-public class FiringSolution extends Time implements FiringSolutionInterface {
+public class FiringSolution extends Time implements FiringSolutionInterface
+{
     private static final DecimalFormat FMT = new DecimalFormat("###0.000");
 
     private Time time;
@@ -16,62 +17,68 @@ public class FiringSolution extends Time implements FiringSolutionInterface {
     private double x;
     private double y;
 
-    private int missilePosition[];
-    private int missileCoordinates[];
-
     // gets current time
-    public Time getTime() {
+    public Time getTime()
+    {
         return time;
     }
 
-    public void setTime(Time t) {
+    public void setTime(Time t)
+    {
         time = t;
-
     }
 
     // prompts the user to enter the value of degree
-    public void degreeInput(int input) {
+    public void degreeInput(int input)
+    {
         degree = input;
     }
 
-    public int getDegree() {
+    public int getDegree()
+    {
         return degree;
     }
 
-    public void setDegree(int d) {
+    public void setDegree(int d)
+    {
         degree = d;
-
+        missileCoordinateConvert(); // recalculate x & y values
     }
 
     // prompts the user to enter the value of x's point
-    public void xInput(double input) {
+    public void xInput(double input)
+    {
         x = input;
     }
 
-    public double getX() {
+    public double getX()
+    {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(double x)
+    {
         this.x = x;
-
     }
 
     // prompts the user to enter the value of y's point
-    public void yInput(double input) {
+    public void yInput(double input)
+    {
         y = input;
     }
 
-    public double getY() {
+    public double getY()
+    {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(double y)
+    {
         this.y = y;
-
     }
 
-    public String toString() {
+    public String toString()
+    {
         return this.getTime().toString();
     }
 
@@ -81,36 +88,28 @@ public class FiringSolution extends Time implements FiringSolutionInterface {
     // degrees, increment seconds
     // }
 
-    // do we need to prompt the user to enter an angle (t) ? 
-    // also not sure why variable x and y is not used, but used in the if statement?
-    public void missileCoordinateConvert() {
-        double x; // the missile's x coordinate in radians
-        double y; // the missile's y coordinate in radians
-        double r; // t's conversion in radians
-        int t; // the angle's variable
 
-        t = 0; // initialise t at 0
-        //t = in.nextInt(); is it needed? 
-        if (t >= 0 && t <= 180) {
-            r = Math.toRadians(t);
-
-            x = 4000 * Math.cos(r);
-            y = 20 * Math.sin(r);
-        }
-        //System.out.println("(" + x +", " + y +")"); should this comment be added to the method? 
+    public Time timeToFireLaser(double x, double y)
+    {
+        Time t = time;
+        return t;
     }
 
-    /**
-     * notes:
-     * have a separate array for the coordinates, position of the missile, laser's
-     * degree
+    /** do we need to prompt the user to enter an angle (t) ? 
+     * [No, I don't think so, I think it just starts at missile angle 0, laser angle 90]
+     * I think we actually can just do the conversion in one line 
+     * (I changed the name from r to degreeInRad to keep track of it better but we can change it 
+     * back of course)
+     * I'm pretty sure we need the x and y so it re-calculates the x and y coordinates based on the
+     * conversion to radians then we can just call it to update
      */
+    public void missileCoordinateConvert() 
+    {
+        double degreeInRad = Math.toRadians(degree); // convert the missile's degree to radians
 
-    /**
-     * Given an angle t in the range of 0–180° for the direction of the laser, the
-     * position of the
-     * missile on its elliptical path is the coordinate (x,y) where
-     * x=4000*Math.cos(r) and
-     * y=20*Math.sin(r). r is the value t converted to radia
-     */
+        x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
+        y = 20 * Math.sin(degreeInRad);   // calculate y co-ordinate
+
+    }
+
 }
