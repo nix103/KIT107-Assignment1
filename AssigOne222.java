@@ -1,6 +1,6 @@
 /**
  * Assignment 1
- * @author <<YOUR NAMES AND STUDENT IDs HERE>>
+ * @author Nicole and Nicolyn
  * @version <<DATE>>
  * 
  * Split <<50:50 or change!>>
