@@ -17,6 +17,14 @@ public class FiringSolution extends Time implements FiringSolutionInterface
     private double x;
     private double y;
 
+    public FiringSolution(Time t, int d, double x, double y)
+    {
+        setTime(t);
+        setDegree(d);
+        setX(x);
+        setY(y);
+    }
+
     // gets current time
     public Time getTime()
     {
@@ -28,11 +36,12 @@ public class FiringSolution extends Time implements FiringSolutionInterface
         time = t;
     }
 
-    // prompts the user to enter the value of degree
-    public void degreeInput(int input)
-    {
-        degree = input;
-    }
+    // not sure if we need this?
+    // // prompts the user to enter the value of degree
+    // public void degreeInput(int input)
+    // {
+    //     degree = input;
+    // }
 
     public int getDegree()
     {
