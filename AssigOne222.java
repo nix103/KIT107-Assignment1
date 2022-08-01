@@ -1,6 +1,6 @@
 /**
  * Assignment 1
- * @author Nicole and Nicolyn
+ * @author Nicole Lawrence and Nicolyn Kwok
  * @version <<DATE>>
  * 
  * Split <<50:50 or change!>>
