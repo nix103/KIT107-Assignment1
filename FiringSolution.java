@@ -8,7 +8,7 @@
 
 import java.text.DecimalFormat;
 
-public class FiringSolution extends Time implements FiringSolutionInterface
+public class FiringSolution implements FiringSolutionInterface
 {
     private static final DecimalFormat FMT = new DecimalFormat("###0.000");
 
@@ -17,6 +17,7 @@ public class FiringSolution extends Time implements FiringSolutionInterface
     private double x;
     private double y;
 
+    // created a constructor to call from main
     public FiringSolution(Time t, int d, double x, double y)
     {
         setTime(t);
@@ -51,7 +52,7 @@ public class FiringSolution extends Time implements FiringSolutionInterface
     public void setDegree(int d)
     {
         degree = d;
-        missileCoordinateConvert(); // recalculate x & y values
+        //missileCoordinateConvert(); // recalculate x & y values
     }
 
     // prompts the user to enter the value of x's point
@@ -88,7 +89,10 @@ public class FiringSolution extends Time implements FiringSolutionInterface
 
     public String toString()
     {
-        return this.getTime().toString();
+        String s = "At time " + this.getTime().toString() +
+        ", fire at " + degree + " degrees to impact missile at (" +
+        FMT.format(x) + ", " + FMT.format(y) + ")";
+        return s;
     }
 
     public Time timeToFireLaser(double x, double y)
