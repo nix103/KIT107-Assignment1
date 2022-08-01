@@ -8,21 +8,20 @@
 
 import java.util.Scanner;
 
-public class AssigOne222 implements TimeInterface, FiringSolutionInterface
+public class AssigOne222
 {
     public static void main(String []args)
     {
-        // double degree = 0;
-        Time launchTime = new Time(12, 30, 0); //launch time
-        double chargeTime = 15.737;         // time for laser to charge
-        int laserStartDegree = 90;          // start position for laser
-        int missileStartDegree = 0;         // start position for missile
-        double missileTime;  // time for missile to move one degree
-        double laserTime;     // time for laser to move one degree
-        int missileDeg;
-        int laserDeg;
         
+        Time currentTime = new Time(12, 30, 0); // set up launch time
 
+        double chargeTime = 15.737; // time for laser to charge
+        
+        double missileTime = 0;  // time for missile to move one degree, initialised to 0
+        double laserTime = 0;    // time for laser to move one degree, initialised to 0
+
+        
+        // iterating through each position (degree) of the missile from Launchtown to Doomsville
         for(int i = 0; i <= 180; i++)
         {
             // At i how long would it take the laser to get to i
@@ -31,21 +30,40 @@ public class AssigOne222 implements TimeInterface, FiringSolutionInterface
             // If yes shoot missile at time missile arrives
             // try next degree
 
-            // missile to i
-            missileTime = i*7.405;  // time for missile to move one degree
-            laserTime = i*3.61;     // time for laser to move one degree
+            // int d = FiringSolutionInterface.setDegree(i);
 
-            if(i >= 90 && i <= 189){
-                missileDeg = 90 + i;
-            } 
-            else if(i < 90 && i >0)
-            {
-                missileDeg = 90 - i;
-            }
+            missileTime = i*7.405;  // time for missile to move i degrees
+
+            // update time
+            currentTime.addSeconds(7.405);
             
+            // time for laser to move to missile position (note: missile position = i)
+            if(i <= 90 && i > 0){ 
+                laserTime = (90 - i) * 3.61; 
+            } 
+            else if(i > 90 && i <= 180)
+            {
+                laserTime = (90 + i) * 3.61;
+            }  
 
-            // if(missileTime)            
-        
+
+            if(laserTime <= missileTime) // + check if laser has had time to charge
+            {
+                // from notes: determine the (x,y) coordinate of impact and the time
+                //             create a firing solution of these values
+                //             display the time and firing solution (you can make use 
+                //             of the defined DecimalFormat objects to format the 
+                //             output of Time and FiringSolution objects)
+
+                // Not working yet:
+                // x and y coordinate of missile at i
+                // double x = ??;
+                // double y = ??; //FiringSolution.getY();?
+
+                // make firing solution and fire laser
+                FiringSolution fireLaser = new FiringSolution(currentTime, i, x, y);          
+
+            }                    
             
 
 
