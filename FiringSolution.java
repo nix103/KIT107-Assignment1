@@ -82,13 +82,6 @@ public class FiringSolution extends Time implements FiringSolutionInterface
         return this.getTime().toString();
     }
 
-    // public boolean isHitPoint() {
-    // yes - fire laser
-    // no - increment
-    // degrees, increment seconds
-    // }
-
-
     public Time timeToFireLaser(double x, double y)
     {
         Time t = time;
