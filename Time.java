@@ -117,9 +117,4 @@ public class Time implements TimeInterface
         }
     }
 
-    //----------------
-
-    // need an initial launch time (startLaunch) which is 12:30:00
-    // need 
-
  }
