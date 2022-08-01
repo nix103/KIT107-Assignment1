@@ -15,5 +15,5 @@ public interface TimeInterface
     public String toString();
     public String toMilitaryString();
     public boolean equals(Time t);
-    public void addSeconds(double s);
+    public void addSeconds(int s);
 }

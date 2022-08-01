@@ -106,15 +106,24 @@ public class Time implements TimeInterface
         return ((this.hour == that.hour) && (this.minute == that.minute) && (this.second == that.second));
     }
  
-    public void addSeconds(double s) { 
-        
-        setTime(hour, minute, (int)s++); // increments seconds
+    public void addSeconds(int seconds) { 
+       
+        int h = hour;
+        int m = minute;
+        int s = second;
 
-        // resets seconds to 0 once a minute has passed
-        if(s == 60.0)
+        if (s + seconds > 60)
         {
-            s = 0;                    
+            m = m + (int)(s + seconds / 60);
+            s = (int)(s + seconds) % 60;
         }
+        if (m > 60) 
+        {
+            h = h + (int)(m / 60);
+            m = m % 60;
+        }
+        
+        setTime(h, m, s);
     }
 
  }
