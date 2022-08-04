@@ -50,14 +50,22 @@ public class AssigOne222 {
                 degrees = i;
                 break;
             }
+            // System.out.println(degrees);
+            currentTime.addSeconds((int) missileTimeInSeconds);
+            System.out.println(currentTime);
+            // double degreeInRad = Math.toRadians(degrees);
+            // double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
+            // double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
+            // FiringSolution fireLaser = new FiringSolution(currentTime, degrees, x, y);
+            // System.out.println(fireLaser.toString());
         }
-        System.out.println(degrees);
-        currentTime.addSeconds((int) missileTimeInSeconds);
-        double degreeInRad = Math.toRadians(degrees);
-        double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
-        double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
-        FiringSolution fireLaser = new FiringSolution(currentTime, degrees, x, y);
-        System.out.println(fireLaser.toString());
+        // System.out.println(degrees);
+        // currentTime.addSeconds((int) missileTimeInSeconds);
+        // double degreeInRad = Math.toRadians(degrees);
+        // double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
+        // double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
+        // FiringSolution fireLaser = new FiringSolution(currentTime, degrees, x, y);
+        // System.out.println(fireLaser.toString());
 
         // calculate the time it will take for the laser to charge
         for (int i = 90; i <= 180; i++) {

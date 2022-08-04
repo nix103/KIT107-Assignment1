@@ -109,25 +109,4 @@ public class FiringSolution implements FiringSolutionInterface
      * I'm pretty sure we need the x and y so it re-calculates the x and y coordinates based on the
      * conversion to radians then we can just call it to update
      */
-    public void missileCoordinateConvert() 
-    {
-        double degreeInRad = Math.toRadians(degree); // convert the missile's degree to radians
-
-        x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
-        y = 20 * Math.sin(degreeInRad);   // calculate y co-ordinate
-
-    }
-
-    /** for the conversion from angle t to radians, is it best to use a for loop ? 
-     * and then use  like
-     * (final)? double HORIZ; 
-     * (final)? double VERT; 
-     * for (t is between 0 to 180) {
-     * x = MAX_HORIZ*Math.cos(Math.toRadians(degree)); 
-     * y = MAX_VERT*Math.sin(Math.toRadians(degree)); 
-     * }
-     * HORIZ for the specific horizontal angle of the missile, while VERT for the specific vertical angle of the missile? 
-     * do you reckon? 
-     *
-     */
 }
