@@ -37,13 +37,6 @@ public class FiringSolution implements FiringSolutionInterface
         time = t;
     }
 
-    // not sure if we need this?
-    // // prompts the user to enter the value of degree
-    // public void degreeInput(int input)
-    // {
-    //     degree = input;
-    // }
-
     public int getDegree()
     {
         return degree;
