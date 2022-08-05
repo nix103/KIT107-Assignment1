@@ -9,10 +9,8 @@
 
 import java.util.Scanner;
 
-public class AssigOne222
-{
-    public static void main(String[] args)
-    {
+public class AssigOne222 {
+    public static void main(String[] args) {
 
         Time initialTime = new Time(12, 30, 0); // set up launch time
         Time currentTime = initialTime;
@@ -23,6 +21,7 @@ public class AssigOne222
 
         double missileTimeInSeconds = 0; // records time for missile to move one degree, initialised to 0
         double laserTimeInSeconds = 0;   // records time for laser to move one degree, initialised to 0
+        double laserChargingTime = 0; // records time for the laser to charge, initialised at 0
 
         // Time timeOfLastFire = new Time();
         boolean HasFired = false;
