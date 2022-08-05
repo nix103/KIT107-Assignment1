@@ -1,3 +1,4 @@
+
 /**
  * Class for Time
  * ADT implementation for KIT107 Assignment 1
@@ -17,6 +18,7 @@ public class Time implements TimeInterface
     
     /**
      * Constructor -- midnight
+     * 
      * @author Julian Dermoudy
      */
     public Time()
@@ -26,6 +28,7 @@ public class Time implements TimeInterface
     
     /**
      * Constructor -- to given time
+     * 
      * @param h new value for hour
      * @param m new value for minute
      * @param s new value for seconds <- ? or just 0
@@ -38,6 +41,7 @@ public class Time implements TimeInterface
     
     /**
      * Alter hour, minute, and second
+     * 
      * @param h new value for hour
      * @param m new value for minute
      * @param s new value for second
@@ -53,6 +57,7 @@ public class Time implements TimeInterface
     
     /**
      * Find printable form of time
+     * 
      * @return String form of time for printing etc.
      * @author Julian Dermoudy
      */
@@ -87,6 +92,7 @@ public class Time implements TimeInterface
     
     /**
      * Find printable form of time in 24 hour mode
+     * 
      * @return String form of time in 24 hour mode for printing etc.
      * @author Julian Dermoudy
      */
@@ -97,6 +103,7 @@ public class Time implements TimeInterface
     
     /**
      * Determine whether two Time values are equal
+     * 
      * @param that second Time value
      * @return boolean true if times are equal, false otherwise
      * @author Julian Dermoudy
@@ -108,9 +115,13 @@ public class Time implements TimeInterface
  
     public void addSeconds(int secondsToAdd) { 
        
-        int h = hour;
-        int m = minute;
-        int s = second;
+        // int oldSeconds = second;
+        // int newSeconds = s;
+        // // int tot = oldSeconds+newSeconds;
+        // // int newSeconds = s;
+        // // int tot = second + s;
+        // // int oldMinutes = minute;
+        // int newMinutes = 0;
 
         int tot = s + secondsToAdd;
 
@@ -138,7 +149,59 @@ public class Time implements TimeInterface
             m = m % 60;
         }
         
-        setTime(h, m, s);
+        // }
+
+        // oldSeconds = newSeconds;
+
+        // increments the minute if the value of second is 59, not really working tho
+        // (but yeay! an improvement) : )
+        do {
+            minute++;
+        } while (s > 59);
+
+        /* new do-while loop, doesn't work */
+        // do {
+        // if (minute > 59) {
+        // hour++;
+        // }
+        // } while (minute > 59);
+
+        /* if statements, does not work */
+        // if(s>59)
+        // {
+        // minute++;
+        // if (minute > 59) {
+        // minute = 0;
+        // hour++;
+        // }
+        // }
+        // for ( int i = 0 ; i > 59; i++) {
+        // minute++;
+        // s = 0;
+        // for (int j = 0; j > 59; j++) {
+        // minute = 0;
+        // minute++;
+        // hour++;
+        // }
+        // }
+
+        // if (s > 59) {
+        // s = 0;
+        // s++;
+        // minute++;
+        // if (minute > 59) {
+        // minute = 0;
+        // minute++;
+        // hour++;
+        // if (hour )
+        // }
+        // }
+
+        // int h = hour;
+        // int m = minute;
+        // int s = second;
+
+        setTime(hour, minute, s);
     }
 
  }
