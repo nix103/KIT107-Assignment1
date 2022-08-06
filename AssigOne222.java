@@ -44,7 +44,7 @@ public class AssigOne222
                 laserTimeInSeconds = Math.max(laserTimeInSeconds, LASERCHARGETIME); // make sure the laser has had time to charge
                 
                 
-            } else if (i > 90 && i < 180 || hasFired == true) // second half of the path/when the laser is moving left
+            } else if (i > 90 && i < 180) // second half of the path/when the laser is moving left
             {
                 laserTimeInSeconds = (i * LASERTRAVELTIME);
                 laserTimeInSeconds = Math.max(laserTimeInSeconds, (i-1 * LASERTRAVELTIME) + LASERCHARGETIME);
@@ -61,8 +61,8 @@ public class AssigOne222
                 FiringSolution fireLaser = new FiringSolution(currentTime, degrees, x, y);
                 System.out.println(fireLaser.toString());                
                 degreesLastFired = degrees;
-                hasFired = true;
                 timeLastFired = missileTimeInSeconds;
+                break;
             }
         }
 
@@ -76,36 +76,24 @@ public class AssigOne222
             //          yes - fire
             //          no - increment degrees
             
-            // e.g, 
-            int degreeCurrent = 31;
-            int lastFired = 30;
-
-            int degreesSinceLastFired = 1;
+            int degreesSinceLastFired = i - degreesLastFired;
 
             laserTimeInSeconds = timeLastFired + (degreesSinceLastFired*LASERTRAVELTIME);
             missileTimeInSeconds = timeLastFired + (degreesSinceLastFired*MISSILETRAVELTIME);
 
-            if (missileTimeInSeconds >= timeLastFired + LASERCHARGETIME)
+            if (missileTimeInSeconds >= Math.max(missileTimeInSeconds, timeLastFired + LASERCHARGETIME))
             {
                 // fire
-                degreesSinceLastFired = 0;;
-                hasFired = true;
+                currentTime.addSeconds((int) (degreesSinceLastFired*MISSILETRAVELTIME));
+                double degreeInRad = Math.toRadians(i);
+                double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
+                double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
+
+                FiringSolution fireLaser = new FiringSolution(currentTime, i, x, y);
+                System.out.println(fireLaser.toString());  
+                degreesLastFired = i;
                 timeLastFired = missileTimeInSeconds;
             }
-           
-            // degreeCurrent = 32;
-            // lastFired = 30
-            // missile time = 7.405*2 = 14.81
-            // laser time = 3.61*2 = 7.22
-            // charge time elapsed? (i.e., is missile time >= 15.737)
-            // no - can't fire move to next
-
-            // degreeCurrent = 33, lastFired = 30
-            // missile time = 7.405*3 = 22.215
-            // laser time = 3.61*3 = 10.83
-            // charge time elapsed? (i.e., is missile time >= 15.737)
-            // yes - fire
-            // lastFired = 33
         }
     }
 }
