@@ -7,6 +7,8 @@
  */
 
 import java.text.DecimalFormat;
+import java.io.*;
+import java.util.*;
 
 public class Time implements TimeInterface
 {
@@ -115,93 +117,14 @@ public class Time implements TimeInterface
  
     public void addSeconds(int secondsToAdd) { 
        
-        // int oldSeconds = second;
-        // int newSeconds = s;
-        // // int tot = oldSeconds+newSeconds;
-        // // int newSeconds = s;
-        // // int tot = second + s;
-        // // int oldMinutes = minute;
-        // int newMinutes = 0;
+        int newSecond = (second + secondsToAdd) % 60;
+        int newMinute = (((minute + (second + secondsToAdd) / 60)) % 60);
+        // int newHour = (((minute + (second + secondsToAdd) / 60)) % 60);
 
-        int tot = s + secondsToAdd;
-
-        int newSeconds = tot;
+        second = newSecond;
+        minute = newMinute;
+        // hour = newHour;
         
-       
-        if (tot >= 60)
-        {
-            m = minute + 1;
-
-            if(tot-60 > 60)
-            {
-                s = (tot-60)- 60;
-            }
-            else 
-            {
-                s = tot-60;
-            }
-            
-        }
-        if (m >= 60) 
-        {
-            minute = 0;            
-            h = h + (int)(m / 60);
-            m = m % 60;
-        }
-        
-        // }
-
-        // oldSeconds = newSeconds;
-
-        // increments the minute if the value of second is 59, not really working tho
-        // (but yeay! an improvement) : )
-        do {
-            minute++;
-        } while (s > 59);
-
-        /* new do-while loop, doesn't work */
-        // do {
-        // if (minute > 59) {
-        // hour++;
-        // }
-        // } while (minute > 59);
-
-        /* if statements, does not work */
-        // if(s>59)
-        // {
-        // minute++;
-        // if (minute > 59) {
-        // minute = 0;
-        // hour++;
-        // }
-        // }
-        // for ( int i = 0 ; i > 59; i++) {
-        // minute++;
-        // s = 0;
-        // for (int j = 0; j > 59; j++) {
-        // minute = 0;
-        // minute++;
-        // hour++;
-        // }
-        // }
-
-        // if (s > 59) {
-        // s = 0;
-        // s++;
-        // minute++;
-        // if (minute > 59) {
-        // minute = 0;
-        // minute++;
-        // hour++;
-        // if (hour )
-        // }
-        // }
-
-        // int h = hour;
-        // int m = minute;
-        // int s = second;
-
-        setTime(hour, minute, s);
     }
 
  }
