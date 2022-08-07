@@ -119,11 +119,13 @@ public class Time implements TimeInterface
        
         int newSecond = (second + secondsToAdd) % 60;
         int newMinute = (((minute + (second + secondsToAdd) / 60)) % 60);
-        // int newHour = (((minute + (second + secondsToAdd) / 60)) % 60);
+        if(((second + secondsToAdd) / 60) > 60)
+        {
+            hour++;
+        }       
 
         second = newSecond;
         minute = newMinute;
-        // hour = newHour;
         
     }
 
