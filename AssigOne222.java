@@ -7,8 +7,6 @@
  * Split <<50:50 or change!>>
  */
 
-import java.util.Scanner;
-
 public class AssigOne222
 {
     public static void main(String[] args)
