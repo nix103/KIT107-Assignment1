@@ -48,10 +48,7 @@ public class AssigOne222
             {
                 laserTimeInSeconds = (i * LASERTRAVELTIME);
                 laserTimeInSeconds = Math.max(laserTimeInSeconds, (i-1 * LASERTRAVELTIME) + LASERCHARGETIME);
-            }
-
-            if (laserTimeInSeconds <= missileTimeInSeconds && i < 180)
-            {
+            } if (laserTimeInSeconds <= missileTimeInSeconds && i < 180) {
                 degrees = i;
                 currentTime.addSeconds((int) missileTimeInSeconds);
                 double degreeInRad = Math.toRadians(degrees);
