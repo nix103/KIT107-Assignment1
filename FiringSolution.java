@@ -119,7 +119,7 @@ public class FiringSolution implements FiringSolutionInterface
      */ 
     public String toString()
     {
-        String s = "At time " + this.getTime().toMilitaryString() +
+        String s = "At time " + this.getTime().toMilitaryString() + " PM" +
         ", fire at " + degree + " degrees to impact missile at (" +
         FMT.format(x) + ", " + FMT.format(y) + ")";
         return s;
