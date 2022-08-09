@@ -2,8 +2,8 @@
 /**
  * Class for Firing Solution
  * ADT Implmentation for KIT107 Assignment 1
- * @author Julian Dermoudy and Nicole and Nicolyn
- * @version 29th July 2022
+ * @author Julian Dermoudy and Nicole Lawrence (482649) and Nicolyn Kwok (598061)
+ * @version 9th August 2022
  */
 
 import java.text.DecimalFormat;
@@ -17,7 +17,11 @@ public class FiringSolution implements FiringSolutionInterface
     private double x;
     private double y;
 
-    // created a constructor to call from main
+    /**
+     * Constructor to call from AssignOne222
+     * 
+     * @author Nicole Lawrence (482649) and Nicolyn Kwok (598061)
+     */
     public FiringSolution(Time t, int d, double x, double y)
     {
         setTime(t);
@@ -26,60 +30,93 @@ public class FiringSolution implements FiringSolutionInterface
         setY(y);
     }
 
-    // gets current time
+    /**
+     * Gets current time for laser and missile.
+     * 
+     * @return time value of type Time.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public Time getTime()
     {
         return time;
     }
-
+    
+    /**
+     * Sets current time for laser and missile.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public void setTime(Time t)
     {
         time = t;
     }
 
+    /**
+     * Gets degree for laser and missile.
+     * 
+     * @return integer value of degree.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public int getDegree()
     {
         return degree;
     }
 
+    /**
+     * Sets degree for laser and missile.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public void setDegree(int d)
     {
         degree = d;
-        //missileCoordinateConvert(); // recalculate x & y values
     }
 
-    // prompts the user to enter the value of x's point
-    public void xInput(double input)
-    {
-        x = input;
-    }
-
+    /**
+     * Gets x coordinate for laser and missile.
+     * 
+     * @return double value of x coordinate.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public double getX()
     {
         return x;
     }
 
+    /**
+     * Sets x coordinate for laser and missile.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public void setX(double x)
     {
         this.x = x;
     }
 
-    // prompts the user to enter the value of y's point
-    public void yInput(double input)
-    {
-        y = input;
-    }
-
+    /**
+     * Gets y coordinate for laser and missile.
+     * 
+     * @return double value of y coordinate.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public double getY()
     {
         return y;
     }
-
+    
+    /**
+     * Sets y coordinate for laser and missile.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */
     public void setY(double y)
     {
         this.y = y;
     }
 
+    
+    /**
+     * Displays output message of the program to users
+     * 
+     * @return a String value which includes variables degree, time, and coordinates.
+     * @author Nicole Lawrence, Nicolyn Kwok
+     */ 
     public String toString()
     {
         String s = "At time " + this.getTime().toMilitaryString() +
@@ -87,19 +124,4 @@ public class FiringSolution implements FiringSolutionInterface
         FMT.format(x) + ", " + FMT.format(y) + ")";
         return s;
     }
-
-    public Time timeToFireLaser(double x, double y)
-    {
-        Time t = time;
-        return t;
-    }
-
-    /** do we need to prompt the user to enter an angle (t) ? 
-     * [No, I don't think so, I think it just starts at missile angle 0, laser angle 90]
-     * I think we actually can just do the conversion in one line 
-     * (I changed the name from r to degreeInRad to keep track of it better but we can change it 
-     * back of course)
-     * I'm pretty sure we need the x and y so it re-calculates the x and y coordinates based on the
-     * conversion to radians then we can just call it to update
-     */
 }

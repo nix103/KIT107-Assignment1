@@ -2,13 +2,11 @@
 /**
  * Class for Time
  * ADT implementation for KIT107 Assignment 1
- * @author Julian Dermoudy, Nicolyn Kwok, Nicole Lawrence
- * @version <<DATE>>
+ * @author Julian Dermoudy, Nicole Lawrence (482649) and Nicolyn Kwok (598061)
+ * @version 9th August 2022
  */
 
 import java.text.DecimalFormat;
-import java.io.*;
-import java.util.*;
 
 public class Time implements TimeInterface
 {
@@ -33,7 +31,7 @@ public class Time implements TimeInterface
      * 
      * @param h new value for hour
      * @param m new value for minute
-     * @param s new value for seconds <- ? or just 0
+     * @param s new value for seconds 
      * @author Julian Dermoudy
      */
     public Time(int h, int m, int s)
@@ -115,17 +113,22 @@ public class Time implements TimeInterface
         return ((this.hour == that.hour) && (this.minute == that.minute) && (this.second == that.second));
     }
  
-    public void addSeconds(int secondsToAdd) { 
+    /** 
+     * Adds seconds to existing time
+     * @param s seconds as a double value 
+     * @author Nicole Lawrence, Nicolyn Kwok 
+     */
+    public void addSeconds(double s) { 
        
-        int newSecond = (second + secondsToAdd) % 60;
-        int newMinute = (((minute + (second + secondsToAdd) / 60)) % 60);
-        if(((second + secondsToAdd) / 60) > 60)
+        double newSecond = (second + s) % 60;
+        double newMinute = (((minute + (second + s) / 60)) % 60);
+        if(((second + s) / 60) > 60)
         {
             hour++;
         }       
 
-        second = newSecond;
-        minute = newMinute;
+        second = (int)newSecond;
+        minute = (int)newMinute;
         
     }
 
