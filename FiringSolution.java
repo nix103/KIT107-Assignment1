@@ -43,6 +43,7 @@ public class FiringSolution implements FiringSolutionInterface
     
     /**
      * Sets current time for laser and missile.
+     * 
      * @author Nicole Lawrence, Nicolyn Kwok
      */
     public void setTime(Time t)
@@ -63,6 +64,7 @@ public class FiringSolution implements FiringSolutionInterface
 
     /**
      * Sets degree for laser and missile.
+     * 
      * @author Nicole Lawrence, Nicolyn Kwok
      */
     public void setDegree(int d)
@@ -83,6 +85,7 @@ public class FiringSolution implements FiringSolutionInterface
 
     /**
      * Sets x coordinate for laser and missile.
+     * 
      * @author Nicole Lawrence, Nicolyn Kwok
      */
     public void setX(double x)
@@ -103,6 +106,7 @@ public class FiringSolution implements FiringSolutionInterface
     
     /**
      * Sets y coordinate for laser and missile.
+     * 
      * @author Nicole Lawrence, Nicolyn Kwok
      */
     public void setY(double y)
