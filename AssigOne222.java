@@ -3,7 +3,7 @@
  * @author Nicole Lawrence (482649) and Nicolyn Kwok (598061)
  * @version 09th August 2022
  * 
- * Split 50:50
+ * Whole of assignment split 50:50
  */
 
 
@@ -22,6 +22,10 @@ public class AssigOne222
         double timeLastFired = LAUNCHTIME; // records the time the laser fired last, initialised to 0
         int degrees = 0; // initialises the degrees to 0 
         int degreesLastFired = degrees; // initialised the degree when the laser fired last, initialised to 0 
+
+        double degreeInRad = Math.toRadians(degrees); // converts angle from degrees to radians
+        double x = 0; // x co-ordinate
+        double y = 0; // y co-ordinate
 
 
         // iterate through each degree of the missile from Launchtown to Doomsville
@@ -51,9 +55,9 @@ public class AssigOne222
                 degrees = i;  // set degrees to current position
                 Time firstFireTime = new Time(12, 30, 0); // set up launch time
                 firstFireTime.addSeconds((int) missileTimeInSeconds); // add seconds elapsed to the time of first fire
-                double degreeInRad = Math.toRadians(degrees); // convert degrees to radians
-                double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
-                double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
+                degreeInRad = Math.toRadians(degrees); // convert degrees to radians
+                x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate
+                y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate
 
                 FiringSolution fireLaser = new FiringSolution(firstFireTime, degrees, x, y); // create new firing solution
                 System.out.println(fireLaser.toString()); // print the output to console
@@ -79,9 +83,9 @@ public class AssigOne222
                Time firingTime = new Time(12, 30, 0); // reset time to initial launch time
                 firingTime.addSeconds((int) (missileTimeInSeconds));// adds seconds elapsed to original time
                
-                double degreeInRad = Math.toRadians(i); // converts angle from degrees to radians
-                double x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate in radians
-                double y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate in radians
+                degreeInRad = Math.toRadians(i); // converts angle from degrees to radians
+                x = 4000 * Math.cos(degreeInRad); // calculate x co-ordinate in radians
+                y = 20 * Math.sin(degreeInRad); // calculate y co-ordinate in radians
 
                 FiringSolution fireLaser = new FiringSolution(firingTime, i, x, y); // create new firing solution
                 System.out.println(fireLaser.toString());  // print output to console
