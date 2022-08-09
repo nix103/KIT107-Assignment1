@@ -115,6 +115,7 @@ public class Time implements TimeInterface
  
     /** 
      * Adds seconds to existing time
+     * 
      * @param s seconds as a double value 
      * @author Nicole Lawrence, Nicolyn Kwok 
      */
